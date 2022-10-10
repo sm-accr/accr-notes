@@ -1,0 +1,6 @@
+$appnames = @('3dbuilder', 'windowsalarms', 'windowscalculator', 'windowscommunicationsapps', 'windowscamera', 'officehub', 'skypeapp', 'getstarted', 'zunemusic', 'windowsmaps', 'solitairecollection', 'bingfinance', 'zunevideo', 'bingnews', 'onenote', 'people', 'windowsphone', 'photos', 'windowsstore', 'bingsports', 'soundrecorder', 'bingweather', 'xboxapp')
+
+foreach ($appname in $appnames)
+  {
+    Get-AppxPackage | where-object {$_.name -match $appname} | Remove-AppPackage
+  }
